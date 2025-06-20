@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión - Cámara de Comercio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/styles/normalize.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+  <div id="main-header"></div>
+
+  <main id="main-content">
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1>Iniciar sesión</h1>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Correo electrónico</label>
+            <input type="email" id="login-email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="login-password">Contraseña</label>
+            <input type="password" id="login-password" name="password" required>
+          </div>
+          
+          <div class="form-options">
+            <label>
+              <input type="checkbox" name="remember"> Recordar sesión
+            </label>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+          
+          <button type="submit" class="auth-submit">Iniciar sesión</button>
+        </form>
+        
+        <div class="auth-links">
+  <p>¿No tienes cuenta? <a href="/register.html">Regístrate ahora</a></p> <!-- Cambiado -->
+</div>
+      </div>
+    </div>
+  </main>
+
+  <div id="main-footer"></div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+/* ============================================= */
+/* BASE STYLES */
+/* ============================================= */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* ============================================= */
+/* LAYOUT & VISIBILITY UTILITIES */
+/* ============================================= */
+#main-header, #main-content, #main-footer {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.spacer {
+    flex: 1;
+}
+
+/* ============================================= */
+/* HEADER STYLES */
+/* ============================================= */
+.site-header {
+    background-color: #002a5c;
+    color: white;
+    padding: 0;
+    width: 100%;
+}
+
+/* Logo styles */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Menu icon styles */
+.menu-icon {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-icon-symbol {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.menu-icon-text {
+    font-size: 16px;
+}
+
+/* Anniversary styles */
+.anniversary {
+    text-align: center;
+    color: gold;
+    line-height: 1.2;
+}
+
+.anniversary-title {
+    font-size: 14px;
+}
+
+.anniversary-year {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.anniversary-text {
+    font-size: 12px;
+}
+
+/* Affiliate button */
+.affiliate-button {
+    background: linear-gradient(to right, #7027e0, #ec2f4b);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s;
+    position: relative;
+    z-index: 100;
+}
+
+.affiliate-button:hover {
+    background: linear-gradient(to right, #ec2f4b, #7027e0);
+}
+
+.highlighted-button {
+    position: relative;
+    z-index: 10;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    border: 2px solid gold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.highlighted-button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+}
+
+/* ============================================= */
+/* SIDE MENU & OVERLAY */
+/* ============================================= */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -430px;
+    width: 430px;
+    height: 100%;
+    background: rgba(15, 41, 91, 0.9);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 10000;
+    color: #ffffff;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.side-menu nav {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.side-menu h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    margin-bottom: 15px;
+}
+
+.side-menu ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.side-menu ul li a i {
+    color: red;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.side-menu ul li a:hover {
+    color: #d1d1d1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Contact info in side menu */
+.contact-info {
+    font-size: 16px;
+    color: white;
+    line-height: 1.8;
+}
+
+.contact-info i {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: underline;
+}
+
+.contact-info a:hover {
+    color: #ff0000;
+}
+
+/* Social icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+/* ============================================= */
+/* MAIN CONTENT STYLES */
+/* ============================================= */
+#container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Gallery styles */
+.gallery, .main-image {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.img-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Carousel styles */
+#carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-image {
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+/* ============================================= */
+/* AFFILIATE FORM */
+/* ============================================= */
+#affiliate-form-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    overflow-y: auto;
+    transition: width 0.3s ease-in-out;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+}
+
+#affiliate-form-container.open {
+    width: 400px;
+}
+
+/* ============================================= */
+/* FOOTER STYLES */
+/* ============================================= */
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #0f295b;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ============================================= */
+/* RESPONSIVE STYLES */
+/* ============================================= */
+@media (max-width: 1024px) {
+    #container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery, .main-image {
+        width: 100%;
+    }
+
+    .gallery {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu-icon, .affiliate-button {
+        order: 1;
+    }
+
+    .anniversary, .logo {
+        order: 2;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .affiliate-button {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .side-menu {
+        width: 100%;
+        left: -100%;
+    }
+
+    .side-menu.open {
+        left: 0;
+    }
+
+    .side-menu nav {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 40px;
+    }
+
+    .menu-icon-symbol {
+        font-size: 20px;
+    }
+
+    .affiliate-button {
+        font-size: 14px;
+    }
+
+    .side-menu {
+        width: 100%;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .card.learning-activities,
+    .card.information {
+        grid-column: span 1;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 2em;
+    }
+}
