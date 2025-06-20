@@ -2,15 +2,14 @@
   "name": "member-verification-system",
   "private": true,
   "version": "0.0.0",
-  
   "scripts": {
-  "start": "node backend/server.js",
-  "start:dev": "concurrently \"vite\" \"node backend/server.js\"",
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "deploy": "npm run build && npm run start"
-},
+    "start": "node backend/server.js",
+    "start:dev": "concurrently \"vite\" \"node backend/server.js\"",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && npm run start"
+  },
   "devDependencies": {
     "concurrently": "^8.2.2",
     "vite": "^6.3.5"
@@ -25,5 +24,6 @@
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
     "localforage": "^1.10.0"
-  }
+  },
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
 }
